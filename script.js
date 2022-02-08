@@ -1,20 +1,28 @@
 var btn = document.createElement('button');
 btn.style.margin = '10px';
-btn.innerHTML = '...';
+btn.innerHTML = 'turn light on';
 document.body.appendChild(btn);
 
 // schijf hier tussen je code
-btn.innerHTML = 'turn light on';
+var ison = true
+
 function changeBackground(color) {
     document.body.style.background = color;
- }
-window.addEventListener("load",function() { changeBackground('black') });
-
-A = 1
-var str = "the light is on";
-btn.onclick = (A = 2,"load",function() { changeBackground('yellow') });
-if (A == 2){
-     console.log(str)
 }
-
+changeBackground('black')
+function changeLight(){
+     if (ison == false){
+          changeBackground('black')
+          ison = true
+          btn.innerHTML = 'turn light on'
+          console.log('the light is off')
+     }
+     else{
+          changeBackground('yellow')
+          ison = false
+          btn.innerHTML = 'turn light off'
+          console.log('the light is on')
+     }
+}
+btn.onclick = changeLight
 // schijf hier tussen je code
